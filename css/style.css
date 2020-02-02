@@ -1,0 +1,472 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  
+}
+
+/*kopējais grid WRAPPER*/
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "header header header"
+    "header header header"
+    "header header header"
+    "hero hero hero"
+    "main main main"
+    "footer footer footer";
+  height: auto;
+  font-size: 20px;
+  color: #0a0a0a;
+  text-align: center;
+  grid-gap: 5px;
+  margin: 30px;
+
+  
+  
+}
+/*header*/
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-areas:
+    "brand brand brand"
+    "nav nav nav"
+    ". tools .";
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  border-right: 2px solid #f5f6f7;
+  border-left: 2px solid #f5f6f7;
+  border-bottom: 2px solid #f5f6f7;
+  margin: 0 -15px 0 -15px;
+ 
+}
+.brand {
+  grid-area: brand;
+}
+.logo {
+  padding-top: 20px;
+  max-width: 30%;
+  text-align: center;
+  border-radius: 50%;
+}
+.nav {
+  grid-area: nav;
+  margin: 5px;
+  font-size: 16px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 50px;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: rgb(24, 180, 219);
+}
+
+li .active {
+  font-weight: bold;
+}
+.tools {
+  grid-area: tools;
+  margin: 15px;
+}
+.button-search {
+  background-color: #2d313a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.tools button:hover {
+  color: rgb(24, 180, 219);
+}
+input {
+  padding: 5px;
+}
+
+/*hero*/
+.hero {
+  grid-area: hero;
+  display: grid;
+  grid-template-areas:
+    "image image image"
+    "action action action";
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 10px;
+  border-bottom: 5px solid rgb(252, 251, 251);
+  background-color: rgb(245, 245, 245);
+}
+
+.bicycle {
+  /*paslēpts */
+  grid-area: image;
+  display: none;
+}
+.bicycle-img {
+  width: 100%;
+  height: auto;
+}
+.action {
+  padding: 25px 0;
+  grid-area: action;
+}
+.action-button {
+  background-color: #f1312b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+  
+}
+
+.action-button:hover {
+  color: rgb(29, 5, 252);
+  font-weight: bold;
+}
+h2 {
+  font-size: 30px;
+  padding: 10px;
+}
+/*Label*/
+.label {
+  padding: 25px 0;
+  grid-area: label;
+  background-color: rgb(245, 245, 245);
+  display: none;
+}
+
+/* Main */
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "feature feature feature"
+    "label2 label2 label2"
+    "listing listing listing";
+
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  max-width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 5px solid rgb(252, 251, 251);
+  
+}
+.feature {
+  padding: 25px 0;
+  grid-area: feature;
+  padding: 0px 20px 10px 20px;
+  background-color: rgb(245, 245, 245);
+}
+
+.feature h1 {
+  text-align: center;
+}
+.service1 h1 {
+  text-align: center;
+}
+
+.service2 h4 {
+  text-align: center;
+}
+
+.service3 h4 {
+  text-align: center;
+}
+
+.feature h1 {
+  padding-bottom: 15px;
+}
+.label2 {
+  padding: 25px 0;
+  grid-area: label2;
+}
+.label2-bike {
+  max-width: 80%;
+}
+.listing {
+  padding: 25px 0;
+  grid-area: listing;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(245, 245, 245);
+}
+.sidebar {
+  padding: 25px 0;
+  grid-area: sidebar;
+  display: none;
+  background-color: rgb(245, 245, 245);
+}
+.footer {
+  padding: 20px;
+  grid-area: footer;
+}
+
+.inner-footer {
+  text-align: center;
+}
+/* ------------------------------------------------------------------------------ */
+
+@media (min-width: 576px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "header header header"
+      "hero hero hero"
+      ". . label2."
+      "main main main"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
+    height: auto;
+    font-size: 20px;
+    color: #0a0a0a;
+    text-align: center;
+    grid-gap: 20px;
+  }
+
+  /* Header */
+  .header {
+    display: grid;
+    grid-template-areas: "brand nav tools";
+    grid-template-columns: auto auto auto;
+    grid-row: row 1;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 100px;
+    grid-area: header;
+    max-width: 100%;
+    height: 90px;
+    border-bottom: 2px solid #f5f6f7;
+    margin:0;
+    margin-bottom: 20px;
+    
+    
+    
+    
+    
+    
+  }
+
+  .logo {
+    display: block;
+    max-width: 65px;
+    float: left;
+    margin: 10px;
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  .nav {
+    grid-area: nav;
+    margin: 10px;
+    font-size: 16px;
+
+    
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 80px;
+  }
+
+  .action-button {
+    background-color: #f1312b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 10px;
+    border-radius: 5px;
+    
+  }
+
+  /* Hero */
+  .hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-areas:
+      "image image image"
+      "action action action";
+    grid-gap: 10px;
+    grid-template-columns: 3fr 2fr;
+  }
+  .bicycle {
+    display: block;
+    grid-area: image;
+  }
+  .bicycle-img {
+    width: 95%;
+    height: auto;
+  }
+
+  .main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "feature feature label2-bike"
+      "listing listing listing";
+    grid-gap: 10px;
+  }
+
+  .label2 {
+    display: block;
+    grid-area: label2-bike;
+    background-color: rgb(245, 245, 245);
+    
+  }
+  .action {
+    padding: 25px 0;
+    grid-area: action;
+  }
+  h4 {
+    font-size: 30px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+
+  .label2-bike {
+    max-width: 90%;
+    padding: 0;
+  }
+}
+
+/* ------------------------------------------------------------------------------ */
+
+@media (min-width: 992px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header header header"
+      "hero hero label"
+      "main main sidebar"
+      "footer footer footer";
+    height: auto;
+    font-size: 20px;
+    color: #0a0a0a;
+    text-align: center;
+    grid-gap: 20px;
+  }
+
+  .label2 {
+    display: none;
+  }
+
+  .header {
+    height: 120px;
+  }
+  .logo {
+    display: block;
+    max-width: 95px;
+    float: left;
+    margin: 10px;
+    padding: 0;
+    
+  }
+  ul {
+    font-size: 20px;
+  }
+  .label {
+    padding: 25px 0;
+    grid-area: label;
+    display: block;
+    border-bottom: 5px solid rgb(252, 251, 251);
+  }
+
+  .label-bike {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  .bicycle {
+    display: block;
+    grid-area: image;
+    padding-top: 25px;
+  }
+  .bicycle-img {
+    width: 95%;
+    height: auto;
+  }
+
+  .logo {
+    display: block;
+    max-width: 150px;
+    float: left;
+    margin: 10px;
+    padding: 0;
+  }
+  .sidebar {
+    display: block;
+    border-bottom: 5px solid rgb(252, 251, 251);
+  }
+  .main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 45% auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "feature listing";
+    grid-gap: 20px;
+  }
+}
+.listing {
+  display: block;
+  grid-area: listing;
+  text-align: justify;
+  
+}
+
+.feature {
+  display: block;
+  grid-area: feature;
+  margin-bottom: 0px;
+  text-align: justify;
+  padding-left: 20px;
+}
