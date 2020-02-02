@@ -191,6 +191,7 @@ h2 {
 }
 .feature {
   padding: 25px 0;
+
   grid-area: feature;
   padding: 0px 20px 10px 20px;
   background-color: rgb(245, 245, 245);
@@ -198,6 +199,7 @@ h2 {
 
 .feature h1 {
   text-align: center;
+  padding-top: 20px;
 }
 .service1 h1 {
   text-align: center;
